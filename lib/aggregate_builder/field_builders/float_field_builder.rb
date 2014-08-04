@@ -4,6 +4,8 @@ module AggregateBuilder
     def self.cast(field_name, value)
       if value.is_a?(Float)
         value
+      elsif value.is_a?(Integer)
+        Float(value)
       elsif value.is_a?(String)
         Float(value)
       elsif value.nil?
